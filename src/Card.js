@@ -1,15 +1,17 @@
 import React from "react";
 
-const Free = () => {
+const Card = (props) => {
+  console.log(props);
   return (
     <div className="col-lg-4">
       <div className="card mb-5 mb-lg-0">
         <div className="card-body">
           <h5 className="card-title text-muted text-uppercase text-center">
-            Free
+            {props.title}
           </h5>
           <h6 className="card-price text-center">
-            $0<span className="period">/month</span>
+            {props.price}
+            <span className="period">/month</span>
           </h6>
           <hr />
           <ul className="fa-ul">
@@ -17,13 +19,13 @@ const Free = () => {
               <span className="fa-li">
                 <i className="fas fa-check"></i>
               </span>
-              Single User
+              {props.users}
             </li>
             <li>
               <span className="fa-li">
                 <i className="fas fa-check"></i>
               </span>
-              5GB Storage
+              {props.storage}
             </li>
             <li>
               <span className="fa-li">
@@ -53,7 +55,7 @@ const Free = () => {
               <span className="fa-li">
                 <i className="fas fa-times"></i>
               </span>
-              Free Subdomain
+              {props.subdomain}
             </li>
             <li className="text-muted">
               <span className="fa-li">
@@ -73,4 +75,4 @@ const Free = () => {
   );
 };
 
-export default Free;
+export default Card;
